@@ -180,6 +180,17 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .v-iot .legend{display:flex;gap:16px;padding:9px 14px;border-bottom:1px solid var(--line);color:var(--muted);font-size:10px;flex-wrap:wrap}
 .v-iot .legend span::before{content:"";display:inline-block;width:10px;height:2px;margin-right:6px;vertical-align:3px;background:var(--c)}
 
+/* viz 5: multi-agents */
+.v-agents .rows{padding:14px 14px 0;display:grid;gap:8px}
+.v-agents .ag{display:grid;grid-template-columns:96px 1fr 92px;align-items:center;gap:12px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+.v-agents .ag b{font-weight:500;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v-agents .ag em{font-style:normal;color:var(--dim);font-size:9.5px;text-transform:none;letter-spacing:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v-agents .ag s{display:block;height:3px;background:var(--line);text-decoration:none;position:relative;overflow:hidden}
+.v-agents .ag s::after{content:"";position:absolute;inset:0;background:var(--acc);transform-origin:left;animation:fill 7s infinite}
+.v-agents .ag:nth-child(2) s::after{animation-delay:.5s}.v-agents .ag:nth-child(3) s::after{animation-delay:1s}.v-agents .ag:nth-child(4) s::after{animation-delay:1.5s}.v-agents .ag:nth-child(5) s::after{animation-delay:2s}.v-agents .ag:nth-child(6) s::after{animation-delay:2.5s}
+.v-agents .foot{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;gap:8px;color:var(--dim);font-size:10px}
+.v-agents .foot .ok{color:var(--acc)}
+
 /* about */
 .about{display:grid;grid-template-columns:1.15fr 1fr .85fr}
 .about > div{padding:44px 36px;min-width:0;border-right:1px solid var(--line)}
@@ -356,7 +367,7 @@ footer a:hover{color:var(--ink)}
     </section>
     <div class="stats rv">
       <div><strong data-count="2">2</strong><span>stages en entreprise</span></div>
-      <div><strong data-count="4">4</strong><span>projets techniques</span></div>
+      <div><strong data-count="5">5</strong><span>projets techniques</span></div>
       <div><strong data-count="4">4</strong><span>scanners intégrés en CI</span></div>
       <div><strong data-count="2">2</strong><span>certifications NVIDIA</span></div>
     </div>
@@ -364,7 +375,7 @@ footer a:hover{color:var(--ink)}
 
   <section class="sec" id="projets">
     <div class="wrap">
-      <p class="eyebrow">projets sélectionnés / 04</p>
+      <p class="eyebrow">projets sélectionnés / 05</p>
       <div class="grid">
 
         <article class="proj rv">
@@ -408,6 +419,39 @@ footer a:hover{color:var(--ink)}
           <div class="txt">
             <div class="num">02</div>
             <div class="body">
+              <h3>Système multi-agents IA</h3>
+              <p class="meta">Projet · 2026 · IA, LLM, agents</p>
+              <p class="d">Équipe d'agents IA 100 % locale qui recherche, lit des documents, vérifie ses sources et rédige des rapports structurés, sans aucun service cloud.</p>
+              <div class="details"><ul>
+                <li>Orchestrateur maison : un planificateur découpe l'objectif en plan JSON, puis des agents spécialisés (chercheur, lecteur, analyste, codeur, rédacteur) exécutent les étapes selon leurs dépendances.</li>
+                <li>Agent critique qui vérifie chaque affirmation et ses sources ; rapports Markdown avec citations (document et page, ou URL).</li>
+                <li>Modèles Qwen servis par Ollama, mémoire long terme ChromaDB, lecture PDF / Word / Excel, recherche web, exécution de code en bac à sable.</li>
+                <li>Sécurité : dossiers autorisés, validation humaine des actions risquées, protection contre l'injection de prompt, journal JSONL de chaque appel.</li>
+              </ul></div>
+              <div class="tags"><span class="tag"><span class="dot"></span>projet</span><span class="tag">llm</span><span class="tag">ollama</span><span class="tag">chromadb</span><span class="tag">python</span></div>
+              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="https://github.com/jleliwael/multi-agents" target="_blank" rel="noopener">github <span class="arr">↗</span></a></div>
+            </div>
+          </div>
+          <div class="vis">
+            <div class="viz v-agents" aria-label="Illustration de l'équipe d'agents au travail">
+              <div class="chrome"><i></i><i></i><i></i><span>orchestrateur / veille-ia-sante</span></div>
+              <div class="rows">
+                <div class="ag"><b>planificateur</b><s></s><em>plan · 5 étapes</em></div>
+                <div class="ag"><b>chercheur</b><s></s><em>web · 8 pages</em></div>
+                <div class="ag"><b>lecteur</b><s></s><em>3 pdf</em></div>
+                <div class="ag"><b>analyste</b><s></s><em>comparaison</em></div>
+                <div class="ag"><b>critique</b><s></s><em>sources ✓</em></div>
+                <div class="ag"><b>rédacteur</b><s></s><em>rapport.md</em></div>
+              </div>
+              <div class="foot"><span>qwen3 · ollama · local</span><span class="ok">● 12 sources citées</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <div class="txt">
+            <div class="num">03</div>
+            <div class="body">
               <h3>Assistant RAG étudiants</h3>
               <p class="meta">Projet · 2026 · IA, NLP</p>
               <p class="d">Assistant conversationnel qui répond aux questions administratives des étudiants : emplois du temps, stages, PFE, inscriptions.</p>
@@ -416,7 +460,7 @@ footer a:hover{color:var(--ink)}
                 <li>Réponses appuyées sur les documents officiels, avec prise en compte de la confidentialité des données.</li>
               </ul></div>
               <div class="tags"><span class="tag"><span class="dot"></span>projet</span><span class="tag">rag</span><span class="tag">llm</span><span class="tag">nlp</span><span class="tag">python</span></div>
-              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="https://github.com/jleliwael" target="_blank" rel="noopener">github <span class="arr">↗</span></a></div>
+              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="https://github.com/jleliwael/rag-stages-assistant" target="_blank" rel="noopener">github <span class="arr">↗</span></a></div>
             </div>
           </div>
           <div class="vis">
@@ -434,7 +478,7 @@ footer a:hover{color:var(--ink)}
 
         <article class="proj rv">
           <div class="txt">
-            <div class="num">03</div>
+            <div class="num">04</div>
             <div class="body">
               <h3>VPN IPsec site-à-site</h3>
               <p class="meta">Projet · 2026 · réseaux, sécurité</p>
@@ -478,7 +522,7 @@ footer a:hover{color:var(--ink)}
 
         <article class="proj rv">
           <div class="txt">
-            <div class="num">04</div>
+            <div class="num">05</div>
             <div class="body">
               <h3>Pipeline Big Data IoT</h3>
               <p class="meta">Projet · 2026 · big data, iot, devops</p>
@@ -488,7 +532,7 @@ footer a:hover{color:var(--ink)}
                 <li>Flux de données temps réel via Kafka pour l'analyse et l'exploitation des mesures.</li>
               </ul></div>
               <div class="tags"><span class="tag"><span class="dot"></span>projet</span><span class="tag">kafka</span><span class="tag">docker</span><span class="tag">iot</span><span class="tag">python</span></div>
-              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="https://github.com/jleliwael" target="_blank" rel="noopener">github <span class="arr">↗</span></a></div>
+              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="https://github.com/jleliwael/IoTMonitoring" target="_blank" rel="noopener">github <span class="arr">↗</span></a></div>
             </div>
           </div>
           <div class="vis">
@@ -531,7 +575,7 @@ footer a:hover{color:var(--ink)}
         <div class="sk"><div class="h"><b>02</b><h3>Cloud &amp; DevOps</h3></div><p>Conteneurisation et pipelines d'intégration continue reproductibles.</p><ul><li>Docker, Docker Compose</li><li>GitLab CI, CI/CD</li><li>Git, Nginx</li><li>Virtualisation</li></ul></div>
         <div class="sk"><div class="h"><b>03</b><h3>Réseaux</h3></div><p>Conception, adressage et sécurisation de réseaux d'entreprise.</p><ul><li>Routage &amp; switching</li><li>VPN IPsec</li><li>TCP/IP</li><li>Cisco Packet Tracer</li></ul></div>
         <div class="sk"><div class="h"><b>04</b><h3>Programmation</h3></div><p>Des langages bas niveau aux scripts d'automatisation.</p><ul><li>C</li><li>Python</li><li>Java</li><li>HTML / CSS</li></ul></div>
-        <div class="sk"><div class="h"><b>05</b><h3>IA &amp; Data</h3></div><p>Applications d'IA générative et traitement de flux de données.</p><ul><li>RAG, LLM</li><li>NLP, IA générative</li><li>Big Data, Kafka</li></ul></div>
+        <div class="sk"><div class="h"><b>05</b><h3>IA &amp; Data</h3></div><p>Applications d'IA générative et traitement de flux de données.</p><ul><li>RAG, LLM, agents IA</li><li>Ollama, ChromaDB</li><li>NLP, IA générative</li><li>Big Data, Kafka</li></ul></div>
         <div class="sk"><div class="h"><b>06</b><h3>Embarqué &amp; IoT</h3></div><p>Le socle de ma formation en télécommunication embarquée.</p><ul><li>Microcontrôleurs</li><li>Capteurs</li><li>Communication embarquée</li></ul></div>
       </div>
     </div>
