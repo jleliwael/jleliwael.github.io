@@ -367,7 +367,7 @@ footer a:hover{color:var(--ink)}
     </section>
     <div class="stats rv">
       <div><strong data-count="2">2</strong><span>stages en entreprise</span></div>
-      <div><strong data-count="5">5</strong><span>projets techniques</span></div>
+      <div><strong data-count="6">6</strong><span>projets techniques</span></div>
       <div><strong data-count="4">4</strong><span>scanners intégrés en CI</span></div>
       <div><strong data-count="2">2</strong><span>certifications NVIDIA</span></div>
     </div>
@@ -375,7 +375,7 @@ footer a:hover{color:var(--ink)}
 
   <section class="sec" id="projets">
     <div class="wrap">
-      <p class="eyebrow">projets sélectionnés / 05</p>
+      <p class="eyebrow">projets sélectionnés / 06</p>
       <div class="grid">
 
         <article class="proj rv">
@@ -544,6 +544,43 @@ footer a:hover{color:var(--ink)}
           </div>
         </article>
 
+        <article class="proj rv">
+          <div class="txt">
+            <div class="num">06</div>
+            <div class="body">
+              <h3>Suiveur solaire STM32</h3>
+              <p class="meta">Projet · 2026 · embarqué, capteurs, énergie</p>
+              <p class="d">Panneau solaire motorisé qui s'oriente seul vers la source de lumière la plus intense, piloté par un microcontrôleur STM32.</p>
+              <div class="details"><ul>
+                <li>Deux photorésistances (LDR) placées de part et d'autre du panneau, lues par l'ADC du STM32.</li>
+                <li>Comparaison des deux mesures et commande d'un servomoteur en PWM pour faire pivoter le panneau sur un axe jusqu'à équilibrer l'éclairement.</li>
+                <li>Prototype câblé sur breadboard et validé avec une source lumineuse mobile : le panneau suit la lumière en temps réel.</li>
+              </ul></div>
+              <div class="tags"><span class="tag"><span class="dot"></span>projet</span><span class="tag">stm32</span><span class="tag">adc</span><span class="tag">pwm</span><span class="tag">servomoteur</span></div>
+              <div class="acts"><button class="link main" type="button" data-toggle>détails <span class="arr">↗</span></button><a class="link" href="assets/suiveur-solaire.mp4" target="_blank" rel="noopener">vidéo démo <span class="arr">↗</span></a></div>
+            </div>
+          </div>
+          <div class="vis">
+            <div class="viz v-vpn" aria-label="Illustration du panneau solaire qui suit la lumière">
+              <div class="chrome"><i></i><i></i><i></i><span>stm32 / solar-tracker</span></div>
+              <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet">
+                <circle class="pk" cx="90" cy="42" r="11"><animate attributeName="cx" values="90;310;90" dur="8s" repeatCount="indefinite"/></circle>
+                <line class="tun" x1="90" y1="42" x2="200" y2="128"><animate attributeName="x1" values="90;310;90" dur="8s" repeatCount="indefinite"/></line>
+                <path class="ln" d="M200 130 L200 190 M160 190 L240 190"/>
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" values="-48 200 130;48 200 130;-48 200 130" dur="8s" repeatCount="indefinite"/>
+                  <rect class="rt" x="150" y="124" width="100" height="10"/>
+                  <rect class="host" x="146" y="118" width="6" height="6"/>
+                  <rect class="host" x="248" y="118" width="6" height="6"/>
+                </g>
+                <circle class="rt" cx="200" cy="130" r="4"/>
+                <text x="14" y="206">LDR G · LDR D → ADC</text>
+                <text class="a" x="386" y="206" text-anchor="end">PWM → servo</text>
+              </svg>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -576,7 +613,7 @@ footer a:hover{color:var(--ink)}
         <div class="sk"><div class="h"><b>03</b><h3>Réseaux</h3></div><p>Conception, adressage et sécurisation de réseaux d'entreprise.</p><ul><li>Routage &amp; switching</li><li>VPN IPsec</li><li>TCP/IP</li><li>Cisco Packet Tracer</li></ul></div>
         <div class="sk"><div class="h"><b>04</b><h3>Programmation</h3></div><p>Des langages bas niveau aux scripts d'automatisation.</p><ul><li>C</li><li>Python</li><li>Java</li><li>HTML / CSS</li></ul></div>
         <div class="sk"><div class="h"><b>05</b><h3>IA &amp; Data</h3></div><p>Applications d'IA générative et traitement de flux de données.</p><ul><li>RAG, LLM, agents IA</li><li>Ollama, ChromaDB</li><li>NLP, IA générative</li><li>Big Data, Kafka</li></ul></div>
-        <div class="sk"><div class="h"><b>06</b><h3>Embarqué &amp; IoT</h3></div><p>Le socle de ma formation en télécommunication embarquée.</p><ul><li>Microcontrôleurs</li><li>Capteurs</li><li>Communication embarquée</li></ul></div>
+        <div class="sk"><div class="h"><b>06</b><h3>Embarqué &amp; IoT</h3></div><p>Le socle de ma formation en télécommunication embarquée.</p><ul><li>Microcontrôleurs STM32</li><li>Capteurs, ADC, PWM</li><li>Communication embarquée</li></ul></div>
       </div>
     </div>
   </section>
